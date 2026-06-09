@@ -1,0 +1,131 @@
+# Blind Spot Taxonomy — What risks to detect
+# See PROJECT-detail.md §4.2
+
+CRITICAL:
+  sql-injection:
+    triggers:
+      - "user input"
+      - "query building"
+      - "search by name"
+      - "search by id"
+      - "dynamic query"
+      - "WHERE clause"
+      - "tìm kiếm"
+      - "tìm theo tên"
+      - "tìm theo email"
+      - "query"
+      - "database"
+      - "postgresql"
+      - "mysql"
+      - "lấy"
+    question_template: "SQL injection risk at query construction"
+
+  missing-transaction:
+    triggers:
+      - "multiple writes"
+      - "transfer"
+      - "update two tables"
+      - "double entry"
+      - "chuyển tiền"
+      - "trừ"
+      - "cộng"
+      - "transaction"
+      - "xóa tất cả"
+      - "tạo"
+      - "đơn"
+      - "order"
+      - "refund"
+      - "hoàn"
+    question_template: "Atomicity of multiple write operations"
+
+  auth-bypass:
+    triggers:
+      - "admin only"
+      - "owner only"
+      - "document by id"
+      - "get by id"
+      - "download file"
+      - "document"
+      - "admin"
+      - "quyền"
+      - "xác thực"
+      - "middleware"
+      - "internal API"
+    question_template: "Authorization enforcement completeness"
+
+  double-spend:
+    triggers:
+      - "payment"
+      - "balance"
+      - "inventory decrement"
+      - "order"
+      - "checkout"
+      - "charge"
+      - "thanh toán"
+      - "tiền"
+      - "hoàn tiền"
+      - "refund"
+      - "chuyển tiền"
+    question_template: "Idempotency and race condition on financial operation"
+
+HIGH:
+  lost-update:
+    triggers:
+      - "read-modify-write"
+      - "increment"
+      - "append to list"
+      - "fetch"
+      - "merge"
+      - "profile"
+      - "điểm"
+      - "cập nhật"
+      - "score"
+      - "save"
+      - "lưu"
+      - "data mới"
+    question_template: "Concurrent modification of shared state"
+
+  connection-leak:
+    triggers:
+      - "network connection"
+      - "stream"
+      - "open"
+    question_template: "Resource cleanup on all code paths including errors"
+
+  silent-error:
+    triggers:
+      - "catch block"
+      - "try-catch"
+      - "error handling"
+      - "upload"
+      - "lỗi"
+      - "exception"
+    question_template: "What information is preserved when error occurs"
+
+MEDIUM:
+  n-plus-one:
+    triggers:
+      - "forEach"
+      - "database query inside loop"
+      - "for loop"
+      - "loop qua"
+      - "từng"
+      - "batch"
+    question_template: "Query count scaling with data size"
+
+  wrong-data-structure:
+    triggers:
+      - "contains"
+      - "includes"
+      - "tìm"
+      - "mảng"
+      - "search"
+      - "find"
+    question_template: "Time complexity of search operation"
+
+  cache-invalidation:
+    triggers:
+      - "cache"
+      - "redis"
+      - "memoize"
+    question_template: "When and how stale data gets cleared"

@@ -1,0 +1,28 @@
+# vibe-socratic-reviewer-agent
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Session data
+*.sqlite
+*.db
+
+# Agent metadata
+.commandcode/
+
+# Test fixtures
+test/fixtures/output/

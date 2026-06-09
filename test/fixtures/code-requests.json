@@ -1,0 +1,162 @@
+[
+  {
+    "id": "fixture-001",
+    "rawPrompt": "Viết hàm async function transferMoney(fromId, toId, amount) để chuyển tiền giữa 2 tài khoản trong database.",
+    "language": "typescript",
+    "expectedBlindSpots": ["missing-transaction", "double-spend", "lost-update"],
+    "shouldTriggerSocratic": true,
+    "isEmergency": false
+  },
+  {
+    "id": "fixture-002",
+    "rawPrompt": "Tạo file config.json cho project React. Thêm eslint và prettier config.",
+    "language": "typescript",
+    "expectedBlindSpots": [],
+    "shouldTriggerSocratic": false,
+    "isEmergency": false
+  },
+  {
+    "id": "fixture-003",
+    "rawPrompt": "Viết API endpoint POST /api/orders nhận userId và danh sách items, tạo order và charge payment.",
+    "language": "typescript",
+    "expectedBlindSpots": ["double-spend", "missing-transaction", "auth-bypass"],
+    "shouldTriggerSocratic": true,
+    "isEmergency": false
+  },
+  {
+    "id": "fixture-004",
+    "rawPrompt": "how do I write a for loop in TypeScript?",
+    "language": "typescript",
+    "expectedBlindSpots": [],
+    "shouldTriggerSocratic": false,
+    "isEmergency": false
+  },
+  {
+    "id": "fixture-005",
+    "rawPrompt": "Viết hàm getUserDocuments(userId) lấy tất cả documents của user từ database. Dùng PostgreSQL.",
+    "language": "typescript",
+    "expectedBlindSpots": ["sql-injection"],
+    "shouldTriggerSocratic": true,
+    "isEmergency": false
+  },
+  {
+    "id": "fixture-006",
+    "rawPrompt": "URGENT: Production is down, customers can't login. Need fix for auth middleware NOW.",
+    "language": "typescript",
+    "expectedBlindSpots": [],
+    "shouldTriggerSocratic": false,
+    "isEmergency": true
+  },
+  {
+    "id": "fixture-007",
+    "rawPrompt": "Viết hàm updateUserProfile(userId, data). Fetch user hiện tại, merge data mới, save lại. Dùng MongoDB.",
+    "language": "typescript",
+    "expectedBlindSpots": ["lost-update"],
+    "shouldTriggerSocratic": true,
+    "isEmergency": false
+  },
+  {
+    "id": "fixture-008",
+    "rawPrompt": "Get user by ID from the users table.",
+    "language": "typescript",
+    "expectedBlindSpots": [],
+    "shouldTriggerSocratic": false,
+    "isEmergency": false
+  },
+  {
+    "id": "fixture-009",
+    "rawPrompt": "Viết hàm xử lý upload file. Nhận file từ user, lưu vào S3, tạo record trong database.",
+    "language": "typescript",
+    "expectedBlindSpots": ["missing-transaction", "silent-error"],
+    "shouldTriggerSocratic": true,
+    "isEmergency": false
+  },
+  {
+    "id": "fixture-010",
+    "rawPrompt": "Viết hàm searchUsers(query) tìm kiếm user trong database theo tên hoặc email.",
+    "language": "typescript",
+    "expectedBlindSpots": ["sql-injection"],
+    "shouldTriggerSocratic": true,
+    "isEmergency": false
+  },
+  {
+    "id": "fixture-011",
+    "rawPrompt": "Viết hàm processRefund(orderId) hoàn tiền cho order, cập nhật inventory và tạo refund record.",
+    "language": "typescript",
+    "expectedBlindSpots": ["double-spend", "missing-transaction", "idempotency"],
+    "shouldTriggerSocratic": true,
+    "isEmergency": false
+  },
+  {
+    "id": "fixture-012",
+    "rawPrompt": "Generate boilerplate Dockerfile for Node.js app.",
+    "language": "unknown",
+    "expectedBlindSpots": [],
+    "shouldTriggerSocratic": false,
+    "isEmergency": false
+  },
+  {
+    "id": "fixture-013",
+    "rawPrompt": "Viết middleware kiểm tra quyền admin cho API. Chỉ admin mới được gọi endpoint này.",
+    "language": "typescript",
+    "expectedBlindSpots": ["auth-bypass"],
+    "shouldTriggerSocratic": true,
+    "isEmergency": false
+  },
+  {
+    "id": "fixture-014",
+    "rawPrompt": "Viết hàm getDocumentById(docId) trả về document từ database. Không cần auth vì đây là internal API.",
+    "language": "typescript",
+    "expectedBlindSpots": ["auth-bypass"],
+    "shouldTriggerSocratic": true,
+    "isEmergency": false
+  },
+  {
+    "id": "fixture-015",
+    "rawPrompt": "Viết hàm lưu kết quả game: fetch current score từ DB, cộng điểm mới, save lại. Dùng await cho từng bước.",
+    "language": "typescript",
+    "expectedBlindSpots": ["lost-update", "async-parallelism"],
+    "shouldTriggerSocratic": true,
+    "isEmergency": false
+  },
+  {
+    "id": "fixture-016",
+    "rawPrompt": "Viết endpoint GET /api/users/:id/documents/:docId/download để download file document của user.",
+    "language": "typescript",
+    "expectedBlindSpots": ["auth-bypass"],
+    "shouldTriggerSocratic": true,
+    "isEmergency": false
+  },
+  {
+    "id": "fixture-017",
+    "rawPrompt": "Viết hàm xóa tài khoản user: xóa user record, xóa tất cả posts của user, xóa tất cả comments.",
+    "language": "typescript",
+    "expectedBlindSpots": ["missing-transaction"],
+    "shouldTriggerSocratic": true,
+    "isEmergency": false
+  },
+  {
+    "id": "fixture-018",
+    "rawPrompt": "Write a simple function to add two numbers and return the result.",
+    "language": "typescript",
+    "expectedBlindSpots": [],
+    "shouldTriggerSocratic": false,
+    "isEmergency": false
+  },
+  {
+    "id": "fixture-019",
+    "rawPrompt": "Viết hàm batchUpdatePrices(productIds, newPrice). Loop qua từng product, update giá trong database.",
+    "language": "typescript",
+    "expectedBlindSpots": ["n-plus-one", "missing-transaction"],
+    "shouldTriggerSocratic": true,
+    "isEmergency": false
+  },
+  {
+    "id": "fixture-020",
+    "rawPrompt": "EMERGENCY: database connection pool exhausted, users getting 503 errors. Need connection leak fix NOW.",
+    "language": "typescript",
+    "expectedBlindSpots": [],
+    "shouldTriggerSocratic": false,
+    "isEmergency": true
+  }
+]

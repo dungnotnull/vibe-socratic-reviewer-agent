@@ -1,0 +1,91 @@
+# Concepts tracked in the developer understanding graph
+concepts:
+  - id: database-transactions
+    display: "Database Transactions"
+    category: database
+    prerequisites: []
+    severity: CRITICAL
+
+  - id: sql-injection
+    display: "SQL Injection Prevention"
+    category: security
+    prerequisites: []
+    severity: CRITICAL
+
+  - id: idempotency
+    display: "Idempotency Patterns"
+    category: distributed-systems
+    prerequisites: [database-transactions]
+    severity: CRITICAL
+
+  - id: authorization
+    display: "Authorization vs Authentication"
+    category: security
+    prerequisites: []
+    severity: CRITICAL
+
+  - id: optimistic-locking
+    display: "Optimistic Concurrency Control"
+    category: concurrency
+    prerequisites: [database-transactions]
+    severity: HIGH
+
+  - id: pessimistic-locking
+    display: "Pessimistic Concurrency Control"
+    category: concurrency
+    prerequisites: [database-transactions]
+    severity: HIGH
+
+  - id: async-parallelism
+    display: "Parallel Async Operations"
+    category: concurrency
+    prerequisites: []
+    severity: LOW
+
+  - id: error-propagation
+    display: "Error Propagation Patterns"
+    category: error-handling
+    prerequisites: []
+    severity: HIGH
+
+  - id: resource-cleanup
+    display: "Resource Lifecycle Management"
+    category: reliability
+    prerequisites: []
+    severity: HIGH
+
+  - id: data-structure-selection
+    display: "Data Structure Selection"
+    category: performance
+    prerequisites: []
+    severity: MEDIUM
+
+  - id: cache-consistency
+    display: "Cache Consistency"
+    category: performance
+    prerequisites: []
+    severity: MEDIUM
+
+  - id: race-condition
+    display: "Race Condition Awareness"
+    category: concurrency
+    prerequisites: []
+    severity: CRITICAL
+
+  - id: n-plus-one
+    display: "N+1 Query Pattern"
+    category: performance
+    prerequisites: []
+    severity: MEDIUM
+
+  - id: connection-pooling
+    display: "Connection Pool Management"
+    category: reliability
+    prerequisites: []
+    severity: MEDIUM
+
+  - id: transaction-isolation
+    display: "Transaction Isolation Levels"
+    category: database
+    prerequisites: [database-transactions]
+    severity: HIGH

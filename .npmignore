@@ -1,0 +1,18 @@
+# Exclude from npm package
+src/**/*.ts              # Source maps included, TS sources not needed
+test/
+CLAUDE.md
+PROJECT-detail.md
+PROJECT-DEVELOPMENT-PHASE-TRACKING.md
+SECOND-KNOWLEDGE-BRAIN.md
+.claude/
+.commandcode/
+.env.example
+.gitignore
+.eslintrc.json
+.prettierrc
+tsconfig.json
+tsconfig.*.json
+*.sqlite
+*.db
+node_modules/.cache/

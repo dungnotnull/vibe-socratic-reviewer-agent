@@ -1,0 +1,10 @@
+{
+  "name": "vibe-socratic-cli",
+  "private": true,
+  "bin": {
+    "socratic": "./dist/cli.js"
+  },
+  "scripts": {
+    "build:cli": "tsc -p tsconfig.cli.json"
+  }
+}

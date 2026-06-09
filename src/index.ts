@@ -1,0 +1,17 @@
+export { Orchestrator, orchestrator } from './agents/orchestrator';
+export { ComplexityClassifier } from './agents/code-analyzer/complexity-classifier';
+export { BlindSpotDetector } from './agents/code-analyzer/blind-spot-detector';
+export { ConceptExtractor } from './agents/code-analyzer/concept-extractor';
+export { QuestionGenerator } from './agents/question-generator/tier-generator';
+export { AnswerEvaluator } from './agents/answer-evaluator/understanding-scorer';
+export { UnlockController } from './agents/answer-evaluator/unlock-controller';
+export { ConceptTeacher } from './agents/answer-evaluator/concept-teacher';
+export { CodeAnnotator } from './agents/code-annotator/code-annotator';
+export { QuestionQualitySystem } from './agents/knowledge-updater/question-quality';
+export { KnowledgeUpdater } from './agents/knowledge-updater/knowledge-updater';
+export { LlmClient, llmClient } from './tools/llm-client';
+export { loadBlindSpotTaxonomy, loadQuestionTemplates, loadCsConcepts } from './tools/config-loader';
+export { logger, createChildLogger } from './tools/logger';
+export * from './tools/validation';
+export * from './types';
+export * from './agents/session-tracker/developer-db';

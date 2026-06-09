@@ -1,0 +1,79 @@
+{
+  "name": "@vibe-socratic/reviewer-agent",
+  "version": "1.0.0",
+  "description": "Socratic AI teaching agent — asks 3 questions before delivering AI-generated code. Prevents cognitive debt in vibe coding.",
+  "main": "dist/index.js",
+  "bin": {
+    "socratic": "./dist/integrations/cli-wrapper.js",
+    "vibe-socratic": "./dist/integrations/cli-wrapper.js"
+  },
+  "files": [
+    "dist/",
+    "src/data/",
+    "src/prompts/",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsc --watch",
+    "cli": "ts-node src/integrations/cli-wrapper.ts",
+    "prepare": "tsc",
+    "prepublishOnly": "tsc"
+  },
+  "keywords": [
+    "ai",
+    "code-review",
+    "socratic",
+    "education",
+    "llm",
+    "claude",
+    "vibe-coding",
+    "code-quality",
+    "teaching",
+    "pair-programming",
+    "typescript",
+    "anthropic"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vibe-socratic/reviewer-agent"
+  },
+  "license": "MIT",
+  "author": "Vibe Socratic Team",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@types/vscode": "^1.120.0",
+    "better-sqlite3": "^11.0.0",
+    "js-yaml": "^4.1.0",
+    "pino": "^10.3.1",
+    "tree-sitter": "^0.21.0",
+    "tree-sitter-javascript": "^0.21.0",
+    "tree-sitter-python": "^0.21.0",
+    "tree-sitter-typescript": "^0.21.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.0",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.120.0",
+    "@typescript-eslint/eslint-plugin": "^8.61.0",
+    "@typescript-eslint/parser": "^8.61.0",
+    "eslint": "^10.4.1",
+    "eslint-config-prettier": "^10.1.8",
+    "pino-pretty": "^13.1.3",
+    "prettier": "^3.8.3",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.4.0"
+  }
+}
+slint-config-prettier": "^10.1.8",
+    "pino-pretty": "^13.1.3",
+    "prettier": "^3.8.3",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.4.0"
+  }
+}

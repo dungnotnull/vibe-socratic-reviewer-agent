@@ -1,0 +1,102 @@
+# Socratic Question Templates — Per blind spot category
+
+sql-injection:
+  tier1:
+    - "Input này đi thẳng vào query. Giải thích cụ thể tại sao đây an toàn — hoặc tại sao nó không an toàn."
+    - "Bạn sẽ ngăn chặn SQL injection ở bước xây dựng query này thế nào?"
+  
+  tier2:
+    - "Tại sao bạn chọn cách xây dựng query này thay vì dùng parameterized query / ORM?"
+  
+  tier3:
+    - "Nếu attacker kiểm soát được trường này, họ có thể làm gì tệ nhất với hệ thống của bạn?"
+
+missing-transaction:
+  tier1:
+    - "Nếu write thứ hai thất bại sau khi write thứ nhất thành công, data của bạn sẽ ở trạng thái nào?"
+  
+  tier2:
+    - "Bạn cần tất cả operations này cùng thành công hoặc cùng thất bại. Cơ chế nào trong code hiện tại đảm bảo điều này?"
+  
+  tier3:
+    - "Server crash sau write thứ nhất và trước write thứ hai. Khi restart, bạn có biết transaction nào dở dang không?"
+
+auth-bypass:
+  tier1:
+    - "userId ở đây đến từ đâu? Có gì ngăn user A truyền vào userId của user B không?"
+  
+  tier2:
+    - "Bạn verify authentication (who is the user) nhưng authorization (is this user allowed to access THIS resource)? Hai cái này khác nhau thế nào ở code này?"
+  
+  tier3:
+    - "Nếu attacker đoán được id của resource, họ có thể xem / sửa dữ liệu của user khác không?"
+
+double-spend:
+  tier1:
+    - "Nếu user click submit hai lần nhanh liên tiếp, điều gì xảy ra với balance?"
+  
+  tier2:
+    - "Idempotency key là gì và ai tạo ra nó — client hay server? Tại sao phải là client?"
+  
+  tier3:
+    - "User gửi request thanh toán → connection timeout → user không biết thành công hay thất bại → retry. User bị charge bao nhiêu lần?"
+
+lost-update:
+  tier1:
+    - "Hai user cùng update setting này. Ai 'thắng'? Data của ai bị mất?"
+  
+  tier2:
+    - "Tại sao bạn chọn optimistic locking thay vì pessimistic? Với traffic pattern nào thì mỗi cái phù hợp hơn?"
+  
+  tier3:
+    - "Nếu 2 request cùng đọc giá trị này rồi cùng cập nhật, kết quả nào sẽ 'thắng'?"
+
+connection-leak:
+  tier1:
+    - "Nếu hàm này throw exception ở giữa chừng, connection / stream có được đóng không?"
+  
+  tier2:
+    - "Tại sao không dùng try-finally hoặc connection pool để tự động quản lý lifecycle?"
+  
+  tier3:
+    - "Với 1000 request/phút và connection pool max 50, nếu leak 10% connections mỗi lần lỗi, sau bao lâu pool cạn kiệt?"
+
+silent-error:
+  tier1:
+    - "Catch block này log error rồi trả về null. Code nào sẽ gọi hàm này và xử lý null thế nào?"
+  
+  tier2:
+    - "Tại sao bạn chọn null return thay vì throw exception? Caller có biết lỗi đã xảy ra không?"
+  
+  tier3:
+    - "Nếu database connection bị timeout ở dòng X, caller có biết để retry hoặc fallback không?"
+
+n-plus-one:
+  tier1:
+    - "Với 1000 items, code này sẽ gọi database bao nhiêu lần?"
+  
+  tier2:
+    - "Tại sao không dùng eager loading / batch query thay vì query từng cái một?"
+  
+  tier3:
+    - "Ở scale 1000 request/phút, tổng số DB queries là bao nhiêu? Hệ thống có chịu được không?"
+
+wrong-data-structure:
+  tier1:
+    - "Bạn đang tìm kiếm trong structure này. Với 10000 elements, một lần tìm kiếm mất bao lâu?"
+  
+  tier2:
+    - "Tại sao bạn chọn structure này? Thứ tự có quan trọng ở đây không?"
+  
+  tier3:
+    - "Mỗi khi cần đọc dữ liệu, bạn query lại toàn bộ. Ở scale 1000 request/giây, đây có vấn đề không?"
+
+cache-invalidation:
+  tier1:
+    - "Data trong cache đến lúc nào thì stale? Làm sao biết cần invalidate?"
+  
+  tier2:
+    - "Cache hit rate bao nhiêu là chấp nhận được? Cache miss thì sao?"
+  
+  tier3:
+    - "Nếu cache và database không đồng bộ trong 5 phút, user thấy gì và hậu quả là gì?"

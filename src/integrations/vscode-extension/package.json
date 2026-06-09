@@ -1,0 +1,52 @@
+{
+  "name": "vibe-socratic-reviewer",
+  "displayName": "Vibe Socratic Reviewer",
+  "description": "Socrates for software engineering — asks you 3 questions before giving you AI-generated code",
+  "version": "0.1.0",
+  "publisher": "vibe-socratic",
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Education", "Other"],
+  "activationEvents": ["onCommand:vibe-socratic.reviewRequest"],
+  "main": "./dist/vscode-extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vibe-socratic.reviewRequest",
+        "title": "Vibe Socratic: Review AI Code Request"
+      },
+      {
+        "command": "vibe-socratic.toggleFlowMode",
+        "title": "Vibe Socratic: Toggle Flow Mode (Pause Questions)"
+      },
+      {
+        "command": "vibe-socratic.showUnderstandingGraph",
+        "title": "Vibe Socratic: Show My Understanding Graph"
+      }
+    ],
+    "configuration": {
+      "title": "Vibe Socratic Reviewer",
+      "properties": {
+        "vibeSocratic.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable Socratic questioning on AI code requests"
+        },
+        "vibeSocratic.maxQuestionsPerHour": {
+          "type": "number",
+          "default": 10,
+          "description": "Maximum Socratic sessions per hour before auto-snoozing"
+        },
+        "vibeSocratic.flowModeDurationMinutes": {
+          "type": "number",
+          "default": 30,
+          "description": "Duration of Flow Mode in minutes"
+        },
+        "vibeSocratic.defaultLanguage": {
+          "type": "string",
+          "default": "typescript",
+          "enum": ["typescript", "javascript", "python", "go", "java"]
+        }
+      }
+    }
+  }
+}
