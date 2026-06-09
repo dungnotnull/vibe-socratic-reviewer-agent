@@ -1,4 +1,4 @@
-# vibe-socratic-reviewer-agent
+<h1 align="center">vibe-socratic-reviewer-agent</h1>
 
 <p align="center">
   <img src="https://img.shields.io/npm/v/@vibe-socratic/reviewer-agent" alt="npm version">
